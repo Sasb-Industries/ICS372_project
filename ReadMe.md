@@ -65,3 +65,13 @@ A desktop Java application that helps restaurant staff manage online orders rece
 
 * Unit tests for `OrderService` (state transitions, totals)
 * Parser tests for JSON import/export (happy/edge cases)
+
+### Group Memebers
+| Name           | TechID   |
+|----------------|----------|
+| Theophilus Cox | 16490348 |
+| Chee Nu Xiong  | ya7383we |
+| Sasha Johnson  | vh1795lr |
+| Group Member 4 | 000000   |
+| Group Member 5 | 000000   |
+
