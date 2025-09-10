@@ -73,5 +73,5 @@ A desktop Java application that helps restaurant staff manage online orders rece
 | Chee Nu Xiong  | ya7383we |
 | Sasha Johnson  | vh1795lr |
 | Group Member 4 | 000000   |
-| Group Member 5 | 000000   |
+| Kyle Durbin    | 16736862 |
 
