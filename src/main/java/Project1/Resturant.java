@@ -35,4 +35,13 @@ public class Resturant {
             System.out.println("Order ID: " + order.getOrder().getOrderId() + " has not been started or completed.");
         }
     }
+    public String incompleteOrder() {
+
+        if (order.getOrder().getOrderStatus() != 3) {
+            return order.toString();
+        }
+
+        return "No items are incomplete.";
+    }
+
 }

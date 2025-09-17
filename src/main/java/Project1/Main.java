@@ -40,7 +40,12 @@ public class Main {
                 choice = scan.nextInt();
             }
             else if (choice == 4) {
-
+                System.out.println(resturant.incompleteOrder());
+                System.out.println("What would you like to do? \n1: Start order");
+                System.out.print("2: Complete Order \n3: Display an Order");
+                System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
+                System.out.println("6: Close up Shop");
+                choice = scan.nextInt();
             }
             else if (choice == 5) {
 
