@@ -5,7 +5,7 @@ public class Item {
     private List<Item> items;
     private String name;
     private int quantity;
-    private int price;
+    private double price;
     public Item(){}
 
     public void setItems(List<Item> items) {
@@ -26,10 +26,14 @@ public class Item {
     public int getQuantity() {
         return quantity;
     }
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
-    public int getPrice() {
+    public double getPrice() {
         return price;
+    }
+    @Override
+    public String toString() {
+        return  name + "\nquantity = " + quantity + "\nprice = " + price + "\n";
     }
 }

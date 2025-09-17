@@ -12,12 +12,9 @@ import java.util.List;
 
 public final class Serialization {
     private static final ObjectMapper mapper = new ObjectMapper();
-    private Serialization() {}
-    public static class OrderWrapper {
-        public Order order;
+    public Serialization() {}
 
-    }
-    public static OrderWrapper loadOrder() throws FileNotFoundException {
+    public static OrderWrapper readOrder() throws FileNotFoundException {
         try(InputStream in = Serialization.class.getResourceAsStream("/testOrder.json")){
             if (in == null){
                 throw  new FileNotFoundException("File not found");
@@ -26,5 +23,8 @@ public final class Serialization {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static void writeOrder(OrderWrapper order) throws IOException {
+
     }
 }
