@@ -9,42 +9,28 @@ public class Main {
         Resturant resturant = new Resturant(orderIn);
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("What would you like to do? \n1: Start order");
-        System.out.print("2: Complete Order \n3: Display an Order");
-        System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
-        System.out.println("6: Close up Shop");
+        printOpts();
+
         int choice = scan.nextInt();
         while (choice !=6 ) {
             if (choice == 1) {
                 resturant.startOrder();
-                System.out.println("What would you like to do? \n1: Start order");
-                System.out.print("2: Complete Order \n3: Display an Order");
-                System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
-                System.out.println("6: Close up Shop");
+                printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 2) {
                 resturant.completeOrder();
-                System.out.println("What would you like to do? \n1: Start order");
-                System.out.print("2: Complete Order \n3: Display an Order");
-                System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
-                System.out.println("6: Close up Shop");
+                printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 3) {
                 resturant.display();
-                System.out.println("What would you like to do? \n1: Start order");
-                System.out.print("2: Complete Order \n3: Display an Order");
-                System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
-                System.out.println("6: Close up Shop");
+                printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 4) {
                 System.out.println(resturant.incompleteOrder());
-                System.out.println("What would you like to do? \n1: Start order");
-                System.out.print("2: Complete Order \n3: Display an Order");
-                System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
-                System.out.println("6: Close up Shop");
+                printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 5) {
@@ -59,5 +45,12 @@ public class Main {
             System.out.println("Have a great night, goodbye!");
             scan.close();
         }
+    }
+
+    public static void printOpts() {
+        System.out.println("What would you like to do? \n1: Start order");
+        System.out.print("2: Complete Order \n3: Display an Order");
+        System.out.println("\n4: Display Incomplete Orders \n5: Print All Orders");
+        System.out.println("6: Close up Shop");
     }
 }
