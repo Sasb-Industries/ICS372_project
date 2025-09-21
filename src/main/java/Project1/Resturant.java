@@ -1,8 +1,13 @@
 package Project1;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Resturant {
+    Map<Integer, OrderWrapper> list = new HashMap<>();
     private OrderWrapper order;
     public Resturant(OrderWrapper order) {
         this.order = order;
@@ -10,6 +15,8 @@ public class Resturant {
     Scanner scan = new Scanner(System.in);
 
     public void display() {
+        System.out.print("Enter Order ID to display: ");
+        int orderID = scan.nextInt();
         for (Item i : order.getOrder().getItems()) {
             System.out.println(i.getName() + " - " + i.getQuantity());
         }
@@ -43,5 +50,4 @@ public class Resturant {
 
         return "No items are incomplete.";
     }
-
 }
