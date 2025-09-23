@@ -37,7 +37,9 @@ public class Main {
                 choice = scan.nextInt();
             }
             else if (choice == 5) {
-
+                System.out.println(list.getList());
+                printOpts();
+                choice = scan.nextInt();
             }
             else if (choice == 6) {
                 scan.nextLine();
