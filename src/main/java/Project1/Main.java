@@ -1,4 +1,5 @@
 package Project1;
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -9,43 +10,43 @@ public class Main {
         System.out.println("Load first order");
         String firstOrder = scan.nextLine();
         OrderWrapper orderIn = Serialization.readOrder(firstOrder);
-        Resturant resturant = new Resturant(orderIn);
-        OrderWrapperList list = new OrderWrapperList();
-        list.addOrder(orderIn);
+        Map <Integer, OrderWrapper> map = new HashMap<>();
+        Resturant resturant = new Resturant(orderIn, map);
+        map.put(1 , orderIn);
         printOpts();
 
         int choice = scan.nextInt();
         while (choice !=7 ) {
             if (choice == 1) {
-                resturant.startOrder();
+                scan.nextLine();
+                resturant.startOrder(map);
                 printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 2) {
-                resturant.completeOrder();
+                resturant.completeOrder(map);
                 printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 3) {
-                resturant.display();
+                resturant.display(map);
                 printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 4) {
-                System.out.println(resturant.incompleteOrder());
+                scan.nextLine();
+                resturant.incompleteOrder(map);
                 printOpts();
                 choice = scan.nextInt();
             }
             else if (choice == 5) {
-
+                Serialization.writeOrder(map, new File("orders_by_id.json"));
+                System.out.println("File Exported Successfully");
+                printOpts();
+                choice = scan.nextInt();
             }
             else if (choice == 6) {
-                scan.nextLine();
-                System.out.println("Load order");
-                String newOrder = scan.nextLine();
-                OrderWrapper anotherOrder = Serialization.readOrder(newOrder);
-                resturant = new Resturant(anotherOrder);
-                list.addOrder(anotherOrder);
+                resturant.addOrder(map);
                 printOpts();
                 choice = scan.nextInt();
 
