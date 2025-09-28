@@ -10,6 +10,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public final class Serialization {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -24,7 +25,8 @@ public final class Serialization {
             return mapper.readValue(in, OrderWrapper.class);
         }
     }
-    public static void writeOrder(OrderWrapper order) throws IOException {
+    public static void writeOrder(Map<Integer, OrderWrapper> orderMap, File outFile) throws IOException {
+        mapper.writeValue(outFile, orderMap);
 
     }
 }

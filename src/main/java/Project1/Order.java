@@ -50,6 +50,6 @@ public class Order {
 
     @Override
     public String toString(){
-        return "Order " + orderId + "\ntype = " + type + "\norder_date = " + order_date +  "\nitems = " + items;
+        return "Order " + orderId + "\ntype = " + type + "\norder_date = " + order_date +  "\nITEMS \n " + items;
     }
 }
