@@ -4,14 +4,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 public class Order {
+
+    // Using enum to keep order statuses
+    public enum Status {
+        NEW,  // Order is not started or completed
+        STARTED,
+        COMPLETED
+    }
+
     private List<Item> items;
     private String type;
     private long order_date;
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     private int orderId = 1;
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    private int orderStatus = 1;
-
+    private Status orderStatus = Status.NEW;
 
     public Order() {}
 
@@ -41,10 +48,11 @@ public class Order {
         return items;
     }
 
-    public void setOrderStatus(int orderStatus) {
+    // Status
+    public void setOrderStatus(Status orderStatus) {
         this.orderStatus = orderStatus;
     }
-    public int getOrderStatus() {
+    public Status getOrderStatus() {
         return orderStatus;
     }
 

@@ -1,0 +1,11 @@
+{
+  "order": {
+    "type": "inside",
+    "order_date": 1515354750000,
+    "items": [
+      {"name": "Steak", "quantity": 1, "price": 19.99},
+      {"name": "Mashed Potatoes", "quantity": 1, "price": 4.99},
+      {"name": "Beer", "quantity": 2, "price": 5.50}
+    ]
+  }
+}

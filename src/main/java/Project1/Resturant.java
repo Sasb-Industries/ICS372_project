@@ -6,13 +6,16 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Resturant {
+
     private Map<Integer, OrderWrapper> map = new HashMap<Integer, OrderWrapper>();
     private OrderWrapper order;
     private int ID = 1;
+
     public Resturant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
         this.order = order;
         this.map = map;
     }
+
     Scanner scan = new Scanner(System.in);
 
     public void display(Map <Integer, OrderWrapper> map) {
@@ -23,21 +26,29 @@ public class Resturant {
         }
     }
     public void startOrder(Map <Integer, OrderWrapper> map ) {
+
+        // Get order to start from user
         System.out.println("Enter Order ID: ");
         int scanID = scan.nextInt();
 
-        if (map.get(scanID).getOrder().getOrderStatus() == 1) {
-            map.get(scanID).getOrder().setOrderStatus(2);
+        // if (order status = NEW) - start order and set status to started
+        if (map.get(scanID).getOrder().getOrderStatus() == Order.Status.NEW) {
+            map.get(scanID).getOrder().setOrderStatus(Order.Status.STARTED);
             System.out.println("Order ID: " + map.get(scanID).getOrder().getOrderId() + " is starting.\n");
         } else {
             System.out.println("Order ID: " + map.get(scanID).getOrder().getOrderId() + " is already started or completed.\n");
         }
     }
+
     public void completeOrder(Map <Integer, OrderWrapper> map) {
+
+        // Have user specify order
         System.out.println("Enter Order ID: ");
         int scanID = scan.nextInt();
-        if (map.get(scanID).getOrder().getOrderStatus() == 2) {
-            map.get(scanID).getOrder().setOrderStatus(3);
+
+        // Swap order specified to completed only if it has been started
+        if (map.get(scanID).getOrder().getOrderStatus() == Order.Status.STARTED) {
+            map.get(scanID).getOrder().setOrderStatus(Order.Status.COMPLETED);
             System.out.println("Order ID: " + map.get(scanID).getOrder().getOrderId() + " is completed.\n");
         }
         else {
@@ -46,10 +57,10 @@ public class Resturant {
     }
     public void incompleteOrder(Map <Integer, OrderWrapper> map) {
 
-        for(OrderWrapper q:  map.values()){
-            if(q.getOrder().getOrderStatus() != 3){
+        for(OrderWrapper q:  map.values()) {
+            if (q.getOrder().getOrderStatus() != Order.Status.COMPLETED) {
                 double total = 0;
-                for(Item i : q.getOrder().getItems()) {
+                for (Item i : q.getOrder().getItems()) {
                     total += i.getPrice();
                 }
                 System.out.println(q.getOrder().toString() + "\nOrder Total : " + total + "\n");
@@ -64,5 +75,4 @@ public class Resturant {
         map.put(ID, orderIn);
         map.get(ID).getOrder().setOrderId(ID);
     }
-
 }
