@@ -69,7 +69,7 @@ public class Resturant {
     }
     public void addOrder(Map <Integer, OrderWrapper> map ) throws IOException {
         System.out.println("Load order");
-        String newOrder = scan.nextLine();
+        String newOrder = scan.next();
         OrderWrapper orderIn = Serialization.readOrder(newOrder);
         ID++;
         map.put(ID, orderIn);

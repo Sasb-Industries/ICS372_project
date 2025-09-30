@@ -79,7 +79,6 @@ public class Main {
             }
         }
 
-
         if (choice == 7) {
             System.out.println("Have a great night, goodbye!");
             scan.close();
@@ -93,7 +92,7 @@ public class Main {
                             "3: Display an Order\n" +
                             "4: Display Incomplete Orders\n" +
                             "5: Export All Orders\n" +
-                            "6: Add new order\n +" +
+                            "6: Add new order\n" +
                             "7: Close up Shop");
     }
 }
