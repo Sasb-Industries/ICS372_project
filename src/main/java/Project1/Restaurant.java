@@ -9,7 +9,7 @@ public class Restaurant {
     private final Map<Integer, OrderWrapper> map;
     private int ID = 1;
 
-    public Restaurant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
+    public Restaurant(Map<Integer, OrderWrapper> map) {
         this.map = map;
     }
 

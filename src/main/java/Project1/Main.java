@@ -27,7 +27,7 @@ public class Main {
             map.put(1, orderIn);
 
             // Create our "Restaurant" and provide it with the order map
-            Restaurant restaurant = new Restaurant(orderIn, map);
+            Restaurant restaurant = new Restaurant(map);
 
             // Start program loop
             boolean running = true;
