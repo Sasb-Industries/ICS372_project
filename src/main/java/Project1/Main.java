@@ -45,19 +45,19 @@ public class Main {
 
                 switch (choice) {
                     case 1:
-                        restaurant.startOrder(map);
+                        restaurant.startOrder();
                         break;
                     case 2:
-                        restaurant.completeOrder(map);
+                        restaurant.completeOrder();
                         break;
                     case 3:
-                        restaurant.display(map);
+                        restaurant.display();
                         break;
                     case 4:
-                        restaurant.incompleteOrder(map);
+                        restaurant.incompleteOrder();
                         break;
                     case 5:
-                        restaurant.addOrder(map);
+                        restaurant.addOrder();
                         break;
                     case 6:
                         System.out.println("Have a great night, goodbye!");

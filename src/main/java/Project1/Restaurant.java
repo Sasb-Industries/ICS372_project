@@ -16,20 +16,23 @@ public class Restaurant {
         this.map = map;
     }
 
+    // Probably want to move this and try with resources in other places
+    // afraid to break something so leave for now
     Scanner scan = new Scanner(System.in);
 
-    public void display(Map <Integer, OrderWrapper> map) {
+    public void display() {
         System.out.print("Enter Order ID to display: \n");
-        int orderID = scan.nextInt();
+        int orderID = scan.nextInt(); scan.nextLine();
         for (Item i : map.get(orderID).getOrder().getItems()) {
             System.out.println(i.getName() + " - " + i.getQuantity()+ "\n");
         }
     }
-    public void startOrder(Map <Integer, OrderWrapper> map ) {
+
+    public void startOrder() {
 
         // Get order to start from user
         System.out.println("Enter Order ID: ");
-        int scanID = scan.nextInt();
+        int scanID = scan.nextInt(); scan.nextLine();
 
         // if (order status = NEW) - start order and set status to started
         if (map.get(scanID).getOrder().getOrderStatus() == Order.Status.NEW) {
@@ -40,11 +43,11 @@ public class Restaurant {
         }
     }
 
-    public void completeOrder(Map <Integer, OrderWrapper> map) {
+    public void completeOrder() {
 
         // Have user specify order
         System.out.println("Enter Order ID: ");
-        int scanID = scan.nextInt();
+        int scanID = scan.nextInt(); scan.nextLine();
 
         // Swap order specified to completed only if it has been started
         if (map.get(scanID).getOrder().getOrderStatus() == Order.Status.STARTED) {
@@ -55,7 +58,7 @@ public class Restaurant {
             System.out.println("Order ID: " + map.get(scanID).getOrder().getOrderId() + " has not been started or completed.\n");
         }
     }
-    public void incompleteOrder(Map <Integer, OrderWrapper> map) {
+    public void incompleteOrder() {
 
         for(OrderWrapper q:  map.values()) {
             if (q.getOrder().getOrderStatus() != Order.Status.COMPLETED) {
@@ -67,7 +70,7 @@ public class Restaurant {
             }
         }
     }
-    public void addOrder(Map <Integer, OrderWrapper> map ) throws IOException {
+    public void addOrder() throws IOException {
         System.out.println("Load order");
         String newOrder = scan.next();
         OrderWrapper orderIn = Serialization.readOrder(newOrder);
