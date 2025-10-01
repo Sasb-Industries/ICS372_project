@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Resturant {
+public class Restaurant {
 
     private Map<Integer, OrderWrapper> map = new HashMap<Integer, OrderWrapper>();
     private OrderWrapper order;
     private int ID = 1;
 
-    public Resturant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
+    public Restaurant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
         this.order = order;
         this.map = map;
     }
