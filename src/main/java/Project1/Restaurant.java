@@ -1,7 +1,6 @@
 package Project1;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ public class Restaurant {
     private int ID = 1;
 
     public Restaurant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
-        this.order = order;
         this.map = map;
     }
 
