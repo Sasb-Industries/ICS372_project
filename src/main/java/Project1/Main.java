@@ -62,7 +62,7 @@ public class Main {
                     case 6:
                         System.out.println("Have a great night, goodbye!");
                         try {
-                            Serialization.writeOrder(map, new File("orders_by_id.json"));
+                            Serialization.writeOrder(map, new File("src/main/resources/orders_by_id.json"));
                             System.out.println("File Exported Successfully");
                         } catch (Exception e) {
                             System.err.println("Export failed: " + e.getMessage());
