@@ -7,7 +7,7 @@ participant Serialization
 participant OrderWrapper
 participant Order
 participant Item
-participant Map
+
 
 User -> Main : select "Add Order"
 Main -> Restaurant : addOrder()
@@ -29,8 +29,6 @@ end
 
 Restaurant -> Order : setOrderStatus(NEW)
 Restaurant -> Order : setOrderId(++ID)
-Restaurant -> Map : put(ID, OrderWrapper)
-Map --> Restaurant : stored
 
 Restaurant -> User : "Order added with ID = ID"
 
