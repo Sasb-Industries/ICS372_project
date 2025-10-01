@@ -7,8 +7,7 @@ import java.util.Scanner;
 
 public class Restaurant {
 
-    private Map<Integer, OrderWrapper> map = new HashMap<Integer, OrderWrapper>();
-    private OrderWrapper order;
+    private final Map<Integer, OrderWrapper> map;
     private int ID = 1;
 
     public Restaurant(OrderWrapper order, Map<Integer, OrderWrapper> map) {
