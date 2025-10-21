@@ -70,7 +70,7 @@ public class Restaurant {
     public void addOrder() throws IOException {
         System.out.println("Load order");
         String newOrder = scan.next();
-        OrderWrapper orderIn = Serialization.readOrder(newOrder);
+        OrderWrapper orderIn = JsonSerialization.readOrder(newOrder);
         ID++;
         map.put(ID, orderIn);
         map.get(ID).getOrder().setOrderId(ID);

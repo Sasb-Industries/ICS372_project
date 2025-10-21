@@ -14,7 +14,7 @@ public class Main {
             // Check that filepath is valid
             OrderWrapper orderIn;
             try {
-                orderIn = Serialization.readOrder(firstOrder);
+                orderIn = JsonSerialization.readOrder(firstOrder);
             } catch (Exception e) {
                 System.err.println("File not found exception:\n" +
                                     e.getMessage() +
@@ -68,6 +68,7 @@ public class Main {
                             System.err.println("Export failed: " + e.getMessage());
                         }
                         running = false;
+                        scan.close();
                         break;
                     default:
                         System.out.println("Wrong choice");

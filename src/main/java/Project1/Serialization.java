@@ -14,7 +14,7 @@ import java.util.Map;
 
 // Class for converting JSON into Java objects that we can use
 // We used JACKSON for our JSON processing
-public final class Serialization {
+public final class JsonSerialization {
 
     // Mapper is provided by Jackson
     private static final ObjectMapper mapper = new ObjectMapper();
