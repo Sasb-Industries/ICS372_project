@@ -1,9 +1,0 @@
-{
-  "order": {
-    "type": "togo",
-    "order_date": 1515354725000,
-    "items": [
-      {"name": "Salad", "quantity": 1, "price": 7.25}
-    ]
-  }
-}
