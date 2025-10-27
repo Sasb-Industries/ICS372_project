@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Project2.MainController"
+            prefWidth="900" prefHeight="520">
+
+    <top>
+        <HBox spacing="8" style="-fx-padding:10; -fx-background-color:#f6f6f6;">
+            <Button text="Refresh" onAction="#onRefresh"/>
+            <Label fx:id="statusLabel" text="Ready"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.65">
+            <items>
+                <TableView fx:id="ordersTable">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                        <TableColumn fx:id="colType" text="Type" prefWidth="140"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+                        <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+                    </columns>
+                </TableView>
+                <ListView fx:id="itemsList"/>
+            </items>
+        </SplitPane>
+    </center>
+
+</BorderPane>
