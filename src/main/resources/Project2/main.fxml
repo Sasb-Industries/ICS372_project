@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+
 <?import javafx.scene.control.*?>
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Project2.MainController"
-            prefWidth="900" prefHeight="520">
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="520" prefWidth="900" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project2.MainController">
 
     <top>
         <HBox spacing="8" style="-fx-padding:10; -fx-background-color:#f6f6f6;">
-            <Button text="Refresh" onAction="#onRefresh"/>
-            <Label fx:id="statusLabel" text="Ready"/>
+            <Button onAction="#onRefresh" prefHeight="26.0" prefWidth="319.0" text="Refresh" />
+            <Label fx:id="statusLabel" prefHeight="17.0" prefWidth="262.0" text="Ready" />
+            <Button onAction="#onStart" prefHeight="26.0" prefWidth="281.0" text="Start" />
+            <Button onAction="#onComplete" prefHeight="26.0" prefWidth="296.0" text="Complete" />
+            <Button onAction="#onDelete" prefHeight="26.0" prefWidth="298.0" text="Delete" />
+            <Button onAction="#onDisplayIncomplete" prefHeight="26.0" prefWidth="315.0" text="Incomplete" />
+            <Button onAction="#onPrintAll" prefHeight="26.0" prefWidth="285.0" text="Print All" />
+            <Region prefHeight="26.0" prefWidth="395.0" />
         </HBox>
     </top>
 
@@ -20,13 +23,13 @@
             <items>
                 <TableView fx:id="ordersTable">
                     <columns>
-                        <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                        <TableColumn fx:id="colType" text="Type" prefWidth="140"/>
-                        <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
-                        <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+                        <TableColumn fx:id="colId" prefWidth="60" text="ID" />
+                        <TableColumn fx:id="colType" prefWidth="140" text="Type" />
+                        <TableColumn fx:id="colStatus" prefWidth="140" text="Status" />
+                        <TableColumn fx:id="colTotal" prefWidth="100" text="Total" />
                     </columns>
                 </TableView>
-                <ListView fx:id="itemsList"/>
+                  <ListView fx:id="itemsList" prefHeight="228.0" prefWidth="311.0" />
             </items>
         </SplitPane>
     </center>

@@ -1,5 +1,6 @@
 package Project1;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
@@ -134,6 +135,16 @@ public final class ServiceFacade implements AutoCloseable {
         notifyListeners();
     }
 
+
+    // ---------------- Printing ----------------
+    /** Write all orders to a JSON file via RestaurantPrinter/Serialization. */
+    public void writeAllOrders(File outFile) {
+        try {
+            new RestaurantPrinter(restaurant).writeAllOrdersToFile(outFile);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write orders to file: " + e.getMessage(), e);
+        }
+    }
     // ---------------- Lifecycle ----------------
     @Override public void close() {
         try { if (watcher != null) watcher.close(); } catch (Exception ignore) {}

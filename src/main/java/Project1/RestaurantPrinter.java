@@ -1,6 +1,8 @@
 package Project1;
 
 import java.io.PrintStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class RestaurantPrinter {
@@ -48,4 +50,19 @@ public class RestaurantPrinter {
         }
         out.println();
     }
+
+    /**
+     * Writes all current orders to the given file as JSON using Serialization#writeOrder(Map, File)}.
+     * Also logs a short confirmation message to the configured PrintStream.
+     *
+     * @param outFile destination file (will be overwritten)
+     * @throws IOException if writing fails
+     */
+    public void writeAllOrdersToFile(File outFile) throws IOException {
+        if (outFile == null) throw new IllegalArgumentException("outFile cannot be null");
+        Serialization.writeOrder(restaurant.all(), outFile);
+        out.println("Wrote " + restaurant.all().size() + " order(s) to: " + outFile.getAbsolutePath());
+        out.flush();
+    }
 }
+
