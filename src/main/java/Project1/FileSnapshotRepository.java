@@ -9,7 +9,7 @@ public final class FileSnapshotRepository implements SnapshotRepository {
     public FileSnapshotRepository(Path snapshotFile) { this.snapshotFile = snapshotFile; }
 
     @Override public Map<Integer, OrderWrapper> load() throws IOException {
-        return Serialization.readSnapshot(snapshotFile.toFile().toPath()); // your existing helper
+        return Serialization.readSnapshot(snapshotFile); // your existing helper
     }
     @Override public void save(Map<Integer,OrderWrapper> state) throws IOException {
         Serialization.writeOrder(state, snapshotFile.toFile());   // your existing helper

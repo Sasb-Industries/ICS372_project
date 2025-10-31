@@ -128,7 +128,7 @@ public final class WatchDirectory implements AutoCloseable, Runnable {
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         } catch (Exception e) {
-            // log if you want
+            // log
         }
     }
 

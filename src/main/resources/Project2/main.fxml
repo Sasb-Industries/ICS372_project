@@ -8,13 +8,15 @@
     <top>
         <HBox spacing="8" style="-fx-padding:10; -fx-background-color:#f6f6f6;">
             <Button onAction="#onRefresh" prefHeight="26.0" prefWidth="319.0" text="Refresh" />
-            <Label fx:id="statusLabel" prefHeight="17.0" prefWidth="262.0" text="Ready" />
+            <Label fx:id="statusLabel" prefHeight="17.0" prefWidth="287.0" text="Ready" />
             <Button onAction="#onStart" prefHeight="26.0" prefWidth="281.0" text="Start" />
             <Button onAction="#onComplete" prefHeight="26.0" prefWidth="296.0" text="Complete" />
             <Button onAction="#onDelete" prefHeight="26.0" prefWidth="298.0" text="Delete" />
             <Button onAction="#onDisplayIncomplete" prefHeight="26.0" prefWidth="315.0" text="Incomplete" />
             <Button onAction="#onPrintAll" prefHeight="26.0" prefWidth="285.0" text="Print All" />
-            <Region prefHeight="26.0" prefWidth="395.0" />
+            <Region prefHeight="26.0" prefWidth="287.0" />
+            <Label prefHeight="26.0" prefWidth="268.0" text="Order ID" />
+            <TextField fx:id="orderIdField" prefHeight="26.0" prefWidth="312.0" />
         </HBox>
     </top>
 
@@ -24,6 +26,8 @@
                 <TableView fx:id="ordersTable">
                     <columns>
                         <TableColumn fx:id="colId" prefWidth="60" text="ID" />
+                        <TableColumn fx:id="colSource" prefWidth="120" text="Source"/>
+                        <TableColumn fx:id="colExtId"  prefWidth="100" text="Vendor ID"/>
                         <TableColumn fx:id="colType" prefWidth="140" text="Type" />
                         <TableColumn fx:id="colStatus" prefWidth="140" text="Status" />
                         <TableColumn fx:id="colTotal" prefWidth="100" text="Total" />

@@ -21,6 +21,8 @@ public class MainController {
     @FXML private TableColumn<OrderVM, String> colType;
     @FXML private TableColumn<OrderVM, String> colStatus;
     @FXML private TableColumn<OrderVM, Number> colTotal;
+    @FXML private TableColumn<OrderVM, String> colSource;
+    @FXML private TableColumn<OrderVM, String> colExtId;
     @FXML private ListView<String> itemsList;
 
     private final ObservableList<OrderVM> rows = FXCollections.observableArrayList();
@@ -31,6 +33,8 @@ public class MainController {
         colType.setCellValueFactory(cd -> new ReadOnlyObjectWrapper<>(cd.getValue().getType()));
         colStatus.setCellValueFactory(cd -> new ReadOnlyObjectWrapper<>(cd.getValue().getStatus()));
         colTotal.setCellValueFactory(cd -> new ReadOnlyObjectWrapper<>(cd.getValue().getTotal()));
+        colSource.setCellValueFactory(cd -> new ReadOnlyObjectWrapper<>(cd.getValue().getSource()));
+        colExtId.setCellValueFactory(cd -> new ReadOnlyObjectWrapper<>(cd.getValue().getExtId()));
         ordersTable.setItems(rows);
 
         ordersTable.getSelectionModel().selectedItemProperty().addListener((obs, oldVm, vm) -> {
@@ -89,7 +93,7 @@ public class MainController {
         }
         StringBuilder sb = new StringBuilder("Incomplete orders:\n");
         for (var w : list)
-            sb.append(w.getOrder().getOrderId()).append(" → ").append(w.getOrder().getOrderStatus()).append("\n");
+            sb.append("Order ID: " + w.getOrder().getOrderId()).append(" → ").append(w.getOrder().getOrderStatus()).append("\n");
         showAlert(Alert.AlertType.INFORMATION, "Incomplete Orders", sb.toString());
     }
 

@@ -1,8 +1,18 @@
 package Project1;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 public class Item {
+    @JsonProperty("name")
+    @JacksonXmlProperty(isAttribute = true, localName = "type")
     private String name;
+
+    @JsonProperty("quantity")
+    @JacksonXmlProperty(localName = "Quantity")
     private int quantity;
+
+    @JsonProperty("price")
+    @JacksonXmlProperty(localName = "Price")
     private double price;
 
     public Item() { }

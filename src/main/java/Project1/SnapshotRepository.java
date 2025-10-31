@@ -1,7 +1,5 @@
 package Project1;
 
-import javafx.scene.shape.Path;
-
 import java.io.IOException;
 import java.util.Map;
 

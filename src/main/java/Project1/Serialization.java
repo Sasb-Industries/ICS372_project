@@ -23,9 +23,13 @@ public final class Serialization {
     /** Parse one JSON file -> OrderWrapper. On error, just log and return null. */
     public static OrderWrapper parseJson(Path file) {
         try {
-            return JSON.readValue(Files.readAllBytes(file), OrderWrapper.class);
+            OrderWrapper w = JSON.readValue(file.toFile(), OrderWrapper.class);
+            if (w != null && w.getOrder() != null) {
+                w.getOrder().setSource("Foodhub");      // tag source by extension
+            }
+            return w;
         } catch (Exception e) {
-            System.err.println("Bad JSON: " + file + " -> " + e.getMessage());
+            System.err.println("JSON parse failed: " + e.getMessage());
             return null;
         }
     }
@@ -33,24 +37,14 @@ public final class Serialization {
     /** Parse one XML file -> OrderWrapper. On error, just log and return null. */
     public static OrderWrapper parseXml(Path file) {
         try {
-            return XML.readValue(Files.readAllBytes(file), OrderWrapper.class);
+            OrderWrapper w = XML.readValue(file.toFile(), OrderWrapper.class);
+            if (w != null && w.getOrder() != null) {
+                w.getOrder().setSource("KingEats");     // tag source by extension
+            }
+            return w;
         } catch (Exception e) {
-            System.err.println("Bad XML: " + file + " -> " + e.getMessage());
+            System.err.println("XML parse failed: " + e.getMessage());
             return null;
-        }
-    }
-
-
-    /** Move a bad file into ./Rejected with a .bad suffix. */
-    private static void quarantine(Path file) {
-        try {
-            Path rejected = file.getParent().resolveSibling("Rejected");
-            Files.createDirectories(rejected);
-            String name = file.getFileName().toString() + "." + System.currentTimeMillis() + ".bad";
-            Files.move(file, rejected.resolve(name), StandardCopyOption.REPLACE_EXISTING);
-            System.err.println("Quarantined: " + file + " -> " + rejected.resolve(name));
-        } catch (IOException ex) {
-            System.err.println("Quarantine failed for " + file + ": " + ex.getMessage());
         }
     }
 
@@ -65,16 +59,6 @@ public final class Serialization {
         } catch (Exception e) {
             System.err.println("Snapshot read failed: " + e.getMessage());
             return null;
-        }
-    }
-
-    /** Write the current cache to snapshot JSON. (Pretty basic for class use.) */
-    public static void writeSnapshot(Map<Integer, OrderWrapper> orderMap, Path snapshotFile) {
-        try {
-            Files.createDirectories(snapshotFile.getParent());
-            JSON.writerWithDefaultPrettyPrinter().writeValue(snapshotFile.toFile(), orderMap);
-        } catch (Exception e) {
-            System.err.println("Snapshot write failed: " + e.getMessage());
         }
     }
 
