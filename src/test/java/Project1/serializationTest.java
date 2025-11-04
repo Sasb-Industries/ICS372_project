@@ -84,6 +84,7 @@ class SerializationTest {
         assertNull(reloaded, "On malformed input, readSnapshot should return null (and log an error)");
     }
 
+    // Testing writing order to file
     @Test
     void writeOrder() throws IOException {
         Map<Integer, OrderWrapper> original = sampleOrders();
