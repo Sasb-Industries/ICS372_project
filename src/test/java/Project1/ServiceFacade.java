@@ -117,7 +117,7 @@ class ServiceFacadeTest {
     // ---------- tests ----------
 
     @Test
-    void listAll_reflectsSeededSnapshot() throws Exception {
+    void listAll() throws Exception {
         Method listAll = findMethod("listAll");
         assumeTrue(listAll != null, "ServiceFacade#listAll not found");
 
@@ -129,7 +129,7 @@ class ServiceFacadeTest {
     }
 
     @Test
-    void writeAllOrders_writesJsonFile() throws Exception {
+    void writeAllOrders() throws Exception {
         Method writeAllOrders = findMethod("writeAllOrders", File.class);
         assumeTrue(writeAllOrders != null, "ServiceFacade#writeAllOrders(File) not found");
 
@@ -143,7 +143,7 @@ class ServiceFacadeTest {
     }
 
     @Test
-    void refreshFromDisk_processesNewXmlAndNotifiesListeners_ifSupported() throws Exception {
+    void refreshFromDisk() throws Exception {
         Method refresh = findMethod("refreshFromDisk");
         Method addListener = findMethod("addListener", OrdersChangedListener.class);
         Method listAll = findMethod("listAll");
@@ -171,7 +171,6 @@ class ServiceFacadeTest {
         Map<Integer, OrderWrapper> before = (Map<Integer, OrderWrapper>) listAll.invoke(service);
         int beforeSize = before.size();
 
-        // Act: trigger a single refresh pass
         refresh.invoke(service);
 
         // After refresh, we expect either:

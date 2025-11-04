@@ -32,7 +32,7 @@ class ItemTest {
     }
 
     @Test
-    void jacksonXml_deserializesAttributeAndElementsCorrectly() throws Exception {
+    void jacksonXml_deserialize() throws Exception {
         // Based on annotations in Item:
         // name -> @JacksonXmlProperty(isAttribute = true, localName = "type")
         // quantity -> <Quantity>...</Quantity>
@@ -48,7 +48,7 @@ class ItemTest {
     }
 
     @Test
-    void jacksonJson_serializesWithExpectedPropertyNames() throws Exception {
+    void jacksonJson_serialize() throws Exception {
         Item it = new Item();
         it.setName("Salad");
         it.setQuantity(1);
