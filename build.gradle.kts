@@ -2,6 +2,7 @@ plugins {
     java
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
+    kotlin("jvm") version "1.9.24"
 }
 
 group = "org.example"

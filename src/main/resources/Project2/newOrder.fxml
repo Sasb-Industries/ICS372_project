@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.Button?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Project2.NewOrderController"
+          hgap="10" vgap="10"
+          style="-fx-padding: 15;">
+
+    <!-- Column constraints: 2 equal-width columns -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+    </columnConstraints>
+
+    <!-- Row constraints: 3 equal-height rows -->
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+    </rowConstraints>
+
+    <children>
+        <!-- Row 0 -->
+        <Button fx:id="itemA" text="Item A"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Button fx:id="itemB" text="Item B"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Row 1 -->
+        <Button fx:id="itemC" text="Item C"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Button fx:id="itemD" text="Item D"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Row 2 -->
+        <Button fx:id="itemE" text="Item E"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Button fx:id="itemF" text="Item F"
+                maxWidth="Infinity" maxHeight="Infinity"
+                GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </children>
+</GridPane>
