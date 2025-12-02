@@ -27,6 +27,7 @@
         <RowConstraints vgrow="ALWAYS" percentHeight="30"/>
         <RowConstraints vgrow="ALWAYS" percentHeight="30"/>
         <RowConstraints vgrow="ALWAYS" percentHeight="30"/>
+        <RowConstraints vgrow="NEVER" percentHeight="5"/>
     </rowConstraints>
 
     <children>
@@ -70,5 +71,12 @@
                   maxWidth="Infinity" maxHeight="Infinity"
                   GridPane.rowIndex="1" GridPane.columnIndex="2"
                   GridPane.rowSpan="3"/>
+
+        <!-- Submit button -->
+        <Button text="Submit Order"
+                onAction="#onSubmit"
+                maxWidth="Infinity"
+                GridPane.rowIndex="4" GridPane.columnIndex="0"
+                GridPane.columnSpan="3"/>
     </children>
 </GridPane>

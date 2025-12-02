@@ -1,6 +1,7 @@
 package Project2;
 
 import Project1.*;
+import Project2.NewOrderController;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
@@ -88,6 +89,10 @@ public class MainController {
                 getClass().getResource("/Project2/newOrder.fxml")
         );
         Parent root = loader.load();
+
+        // Get the Kotlin controller and pass ServiceFacade into it
+        NewOrderController controller = loader.getController();
+        controller.setService(service);
 
         Stage stage = new Stage();
         stage.setTitle("Add Order");
