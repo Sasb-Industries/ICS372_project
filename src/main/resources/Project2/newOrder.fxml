@@ -4,8 +4,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+
 
 <GridPane prefHeight="300" prefWidth="500"
           xmlns="http://javafx.com/javafx/17"
@@ -66,11 +69,25 @@
                 maxWidth="Infinity" maxHeight="Infinity"
                 GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-        <!-- Order list view-->
-        <ListView fx:id="orderList"
-                  maxWidth="Infinity" maxHeight="Infinity"
-                  GridPane.rowIndex="1" GridPane.columnIndex="2"
-                  GridPane.rowSpan="3"/>
+        <!-- Order table with real columns -->
+        <TableView fx:id="orderTable"
+                   maxWidth="Infinity" maxHeight="Infinity"
+                   GridPane.rowIndex="1" GridPane.columnIndex="2"
+                   GridPane.rowSpan="2">
+            <columns>
+                <TableColumn fx:id="colName" text="Item" prefWidth="160"/>
+                <TableColumn fx:id="colQty" text="Qty" prefWidth="60"/>
+                <TableColumn fx:id="colPrice" text="Price" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <!-- footer with total on bottom -->
+        <HBox spacing="8"
+              GridPane.rowIndex="3" GridPane.columnIndex="2"
+              style="-fx-alignment: center-right;">
+            <Label text="Total:"/>
+            <Label fx:id="totalLabel" text="0.00"/>
+        </HBox>
 
         <!-- Submit button -->
         <Button text="Submit Order"

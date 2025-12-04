@@ -81,10 +81,10 @@ public class MainController {
         reloadTableOnFx();
     }
 
-    // Add button that opens up a new screen.  This one is so different
+    // Add button that opens up a new screen.  This one is different
     // Because it opens a new screen and loads xml - not just working the data
     @FXML
-    private void onAdd() throws IOException {
+    private void onNewOrder() throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/Project2/newOrder.fxml")
         );
