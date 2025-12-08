@@ -97,10 +97,16 @@ public class MainController {
         Stage stage = new Stage();
         stage.setTitle("Add Order");
         stage.setScene(new Scene(root));
+
+        // Set window size
+        stage.setWidth(1000);
+        stage.setHeight(700);
+        stage.setMinWidth(800);   // Minimum width
+        stage.setMinHeight(500);  // Minimum height
+
         stage.initOwner(ordersTable.getScene().getWindow());
         stage.show();
     }
-
 
     @FXML private void onDelete() {
         int id = parseOrderIdFromUi();
