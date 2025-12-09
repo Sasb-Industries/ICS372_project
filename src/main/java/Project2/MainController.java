@@ -112,8 +112,14 @@ public class MainController {
         int id = parseOrderIdFromUi();
         if (id < 0) return;
         boolean ok = service.deleteOrderIfNew(id);
-        if (ok) info("Order " + id + " deleted.");
-        else warn("Only NEW orders can be deleted.");
+        if (ok) {
+            info("Order " + id + " deleted.");
+        } else {
+            warn("Only NEW orders can be deleted.");
+            showAlert(Alert.AlertType.INFORMATION,
+                    "Delete Not Allowed",
+                    "Only orders with status NEW can be deleted.");
+        }
         reloadTableOnFx();
     }
 

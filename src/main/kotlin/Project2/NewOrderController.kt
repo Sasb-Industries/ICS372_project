@@ -139,6 +139,7 @@ class NewOrderController {
             setType("Walk-in")
             setOrderDate(System.currentTimeMillis())
             setSource("In-House")
+            setExternalOrderId("999")
         }
 
         val wrapper = OrderWrapper().apply {
