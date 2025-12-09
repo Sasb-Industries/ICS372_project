@@ -53,6 +53,8 @@ public final class ServiceFacade implements AutoCloseable {
         int maxIdSeen = saved.keySet().stream().mapToInt(Integer::intValue).max().orElse(0);
         this.restaurant = new Restaurant(saved, maxIdSeen);
 
+        this.watcher = new WatchDirectory(this.inputDir, this.acceptedDir, this.rejectedDir, this);
+
         // Bootstrap if empty
         if (saved.isEmpty()) {
             refreshFromDisk(); // also saves + notifies
@@ -61,7 +63,6 @@ public final class ServiceFacade implements AutoCloseable {
         }
 
         // Start the watcher
-        this.watcher = new WatchDirectory(this.inputDir, this.acceptedDir, this.rejectedDir, this);
         this.watcher.start();
     }
 

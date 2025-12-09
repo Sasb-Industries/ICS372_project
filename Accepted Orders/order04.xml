@@ -1,0 +1,17 @@
+<Orders>
+    <Order id="504">
+        <OrderType>Delivery</OrderType>
+        <Item type="Fish Tacos">
+            <Price>13.50</Price>
+            <Quantity>3</Quantity>
+        </Item>
+        <Item type="Chips and Salsa">
+            <Price>4.25</Price>
+            <Quantity>1</Quantity>
+        </Item>
+        <Item type="Margarita">
+            <Price>8.00</Price>
+            <Quantity>2</Quantity>
+        </Item>
+    </Order>
+</Orders>

@@ -1,0 +1,17 @@
+<Orders>
+    <Order id="502">
+        <OrderType>Delivery</OrderType>
+        <Item type="Pepperoni Pizza">
+            <Price>18.99</Price>
+            <Quantity>1</Quantity>
+        </Item>
+        <Item type="Caesar Salad">
+            <Price>7.50</Price>
+            <Quantity>1</Quantity>
+        </Item>
+        <Item type="Soda">
+            <Price unit="dollars">2.75</Price>
+            <Quantity>2</Quantity>
+        </Item>
+    </Order>
+</Orders>
