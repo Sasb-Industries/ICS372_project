@@ -1,0 +1,24 @@
+{
+  "order": {
+    "orderId": 601,
+    "type": "Pickup",
+    "order_date": 1733700000000,
+    "items": [
+      {
+        "name": "Cheeseburger",
+        "price": 11.99,
+        "quantity": 1
+      },
+      {
+        "name": "Curly Fries",
+        "price": 4.50,
+        "quantity": 1
+      },
+      {
+        "name": "Root Beer Float",
+        "price": 6.25,
+        "quantity": 1
+      }
+    ]
+  }
+}
